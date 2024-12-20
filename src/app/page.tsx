@@ -1,11 +1,10 @@
 'use client';
+import PreHero from "@/components/pages/PreHero/page";
 
 export default function Home() {
   return (
-    <div>
-      <div className="relative ink-animate w-full h-screen flex justify-center items-center text-6xl z-0 text-white">
-        ZERO
-      </div>
+    <div className="w-full min-h-screen">
+      <PreHero />
     </div>
   );
 }

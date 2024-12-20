@@ -6,16 +6,24 @@
   content: '';
   position: absolute;
   inset: 0;
- 
-  background-image: url('https://images.unsplash.com/photo-1731008948799-a23081ddf419?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-color: theme('colors.background');
   background-size: cover;
   background-position: center;
   z-index: -1;
-
-  -webkit-mask-image: url('/ink-splash.gif');
+  animation: maskAnimation 0.01s steps(1) forwards;
   -webkit-mask-size: cover;
   -webkit-mask-position: center;
-  mask-image: url('/ink-splash.gif');
   mask-size: cover;
   mask-position: center;
+}
+
+@keyframes maskAnimation {
+  0% {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  100% {
+    -webkit-mask-image: url('/ink-splash-2.gif');
+    mask-image: url('/ink-splash-2.gif');
+  }
 }
