@@ -16,6 +16,10 @@ export default {
         background: "#FAF4EE",
       },
     },
+    fontFamily: {
+      'open-sans': ['"Open Sans"', 'sans-serif'],
+      'geist': ['"Geist"', 'sans-serif'],
+    }
   },
   plugins: [],
 } satisfies Config;

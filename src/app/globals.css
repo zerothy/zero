@@ -6,11 +6,11 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-color: theme('colors.background');
+  background-color: theme('colors.primary');
   background-size: cover;
   background-position: center;
   z-index: -1;
-  animation: maskAnimation 0.01s steps(1) forwards;
+  animation: maskAnimation 0.01s steps(1) forwards 0.5s, changeBackground 0.55s steps(1) forwards;
   -webkit-mask-size: cover;
   -webkit-mask-position: center;
   mask-size: cover;
@@ -25,5 +25,14 @@
   100% {
     -webkit-mask-image: url('/ink-splash-2.gif');
     mask-image: url('/ink-splash-2.gif');
+  }
+}
+
+@keyframes changeBackground {
+  0% {
+    background-color: theme('colors.primary');
+  }
+  100% {
+    background-color: theme('colors.background');
   }
 }

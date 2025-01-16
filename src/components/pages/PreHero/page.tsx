@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from "react";
+import Hero from "../Hero/page";
 
 export default function PreHero() {
     const [isNext, setIsNext] = useState(false);
@@ -29,9 +30,12 @@ export default function PreHero() {
 
     return (
         <div className="w-full h-screen overflow-hidden bg-background relative">
-            <div className={`${isNext ? 'scale-[170%] opacity-0' : 'scale-100 opacity-100'} ${isHidden ? 'hidden' : ''} bg-primary relative ink-animate w-full h-full transition-all duration-500 ease-out flex justify-center items-center text-6xl z-0 text-white`}>
-                ZERO
-            </div>
+            {!isHidden && (
+                <div className={`${isNext ? 'scale-[170%] opacity-0' : 'scale-100 opacity-100'} bg-primary text-black relative ink-animate w-full h-full transition-all duration-500 ease-out flex justify-center items-center text-6xl`}>
+                    ZERO
+                </div>
+            )}
+            {isHidden && <Hero />}
         </div>
     );
 }
