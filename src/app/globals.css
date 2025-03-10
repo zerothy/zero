@@ -11,9 +11,9 @@
   background-position: center;
   z-index: -1;
   animation: maskAnimation 0.01s steps(1) forwards 0.5s, changeBackground 0.55s steps(1) forwards;
-  -webkit-mask-size: cover;
+  -webkit-mask-size: 50% 50%;
   -webkit-mask-position: center;
-  mask-size: cover;
+  mask-size: 50% 50%;
   mask-position: center;
 }
 
@@ -28,11 +28,28 @@
   }
 }
 
-@keyframes changeBackground {
+@keyframes inkTransition {
   0% {
-    background-color: theme('colors.primary');
+    -webkit-mask-image: none;
+    mask-image: none;
   }
   100% {
-    background-color: theme('colors.background');
+    -webkit-mask-image: url('/ink-1.gif');
+    mask-image: url('/ink-1.gif');
   }
+}
+
+.ink-transition::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: theme('colors.white');
+  background-size: cover;
+  background-position: center;
+  z-index: 2;
+  animation: inkTransition 0.01s steps(1) forwards 0.5s;
+  -webkit-mask-size: 5% 5%;
+  -webkit-mask-position: center;
+  mask-size: 5% 5%;
+  mask-position: center;
 }
